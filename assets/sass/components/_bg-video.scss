@@ -1,0 +1,13 @@
+.bg-video{
+    @include absTopLeft;
+    width: 100%;
+    height: 100%;
+    z-index: -1 ;
+    opacity: .25;
+    overflow: hidden;
+    &-content{
+        width: 100%;
+        height: 100%; 
+        object-fit: cover;
+    }
+}

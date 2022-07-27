@@ -1,0 +1,91 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+        font-size: $default-font-size;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+        display: inline-block;
+    }
+    &:hover {
+        // .btn:hover
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-dark, 0.2);
+        &::after {
+            // .btn:hover::active
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    &:active {
+        // .btn:active
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($color-dark, 0.2);
+    }
+    &-white {
+        // .btn-white
+        background-color: $color-white;
+        color: $color-grey-dark;
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    &-green {
+        background-color: $color-primary;
+        color: $color-white;
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+    &-animated {
+        animation: slideUp 0.5s ease-out 0.75s;
+        animation-fill-mode: backwards;
+    }
+
+    &::after {
+        //.btn-::after
+        content: "";
+
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        @include absTopLeft;
+        z-index: -1;
+        border-radius: 10rem;
+        transition: all 0.4s;
+    }
+}
+
+.btn-text {
+    &,
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        text-decoration: none;
+        padding: 3px;
+        transition: all 0.2s;
+        border-bottom: 1px solid $color-primary;
+        display: inline-block;
+    }
+    &:hover {
+        transform: translateY(-2px);
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-dark, 0.15);
+        padding: 3px 7px;
+        span {
+            transform: translateX(4px);
+        }
+    }
+    span {
+        display: inline-block;
+        transition: all 0.4s;
+    }
+}
